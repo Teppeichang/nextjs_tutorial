@@ -1,10 +1,11 @@
 import matter from "gray-matter";
 import Link from "next/link";
+import * as style from "../styles/blog.module.scss";
 
 const Blog = (props) => {
   return (
     <>
-      <h1 className="text-3xl">ブログページ</h1>
+      <h1>ブログページ</h1>
       {props.blogs.map((blog, index) =>
         <div key={index}>
           <h3>{blog.frontmatter.title}</h3>
