@@ -1,21 +1,23 @@
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
+import Layout from "../../components/layout";
+import * as style from "../../styles/singleBlog.module.scss";
 
 const SingleBlog = (props) => {
   return (
-    <>
-      <div>
+    <Layout>
+      <div className={style.hero}>
         <Image src={props.frontmatter.image} alt="blog-image" height="500" width="1000" />
       </div>
-      <div>
-        <div>
+      <div className={style.wrapper}>
+        <div className={style.container}>
           <h1>{props.frontmatter.title}</h1>
           <p>{props.frontmatter.date}</p>
           <ReactMarkdown children={props.markdownBody} />
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

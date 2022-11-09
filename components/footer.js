@@ -1,9 +1,10 @@
 import Link from "next/link";
+import * as style from "../styles/common.module.scss";
 
 const Footer = () => {
   return (
-    <footer>
-      <div>
+    <footer className={style.footerWrapper}>
+      <div className={style.insideContainer}>
         <a href="https://www.google.com/">
           <img src="/images/github.svg" alt="logo" />
         </a>

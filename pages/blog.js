@@ -1,19 +1,20 @@
 import matter from "gray-matter";
 import Link from "next/link";
 import Image from "next/image";
+import Layout from "../components/layout";
 import * as style from "../styles/blog.module.scss";
 
 const Blog = (props) => {
   return (
-    <>
-      <div>
-        <div>
+    <Layout>
+      <div className={style.wrapper}>
+        <div className={style.container}>
           <h1>Blog</h1>
           <p>エンジニアの日常生活をお届けします</p>
           {props.blogs.map((blog, index) => {
             return (
-              <div key={index}>
-                <div>
+              <div key={index} className={style.blogCard}>
+                <div className={style.textContainer}>
                   <h3>{blog.frontmatter.title}</h3>
                   <p>{blog.frontmatter.excerpt}</p>
                   <p>{blog.frontmatter.date}</p>
@@ -21,7 +22,7 @@ const Blog = (props) => {
                     Read More
                   </Link>
                 </div>
-                <div>
+                <div className={style.cardImg}>
                   <Image src={blog.frontmatter.image} alt="card-image" height={300} width={1000} quality={90} />
                 </div>
               </div>
@@ -29,7 +30,7 @@ const Blog = (props) => {
           })}
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

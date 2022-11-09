@@ -1,8 +1,11 @@
+import Layout from "../components/layout";
+import * as style from "../styles/contact.module.scss";
+
 const Contact = () => {
   return (
-    <>
-      <div>
-        <div>
+    <Layout>
+      <div className={style.wrapper}>
+        <div className={style.container}>
           <h1>Contact</h1>
           <p>お気軽にご連絡ください</p>
           <form>
@@ -16,7 +19,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 
