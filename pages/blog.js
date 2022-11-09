@@ -2,10 +2,9 @@ import matter from "gray-matter";
 import Link from "next/link";
 
 const Blog = (props) => {
-  console.log(props)
   return (
     <>
-      <h1>ブログページ</h1>
+      <h1 className="text-3xl">ブログページ</h1>
       {props.blogs.map((blog, index) =>
         <div key={index}>
           <h3>{blog.frontmatter.title}</h3>
@@ -31,9 +30,12 @@ export async function getStaticProps() {
         frontmatter: document.data,
         slug: slug
       }
-    })
+    });
     return data
   })(require.context('../data', true, /\.md$/))
+  const orderdBlogs = blogs.sort((current, next) => {
+    return next.frontmatter.id - current.frontmatter.id
+  });
   return {
     props: {
       blogs: blogs
