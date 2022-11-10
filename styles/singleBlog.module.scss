@@ -6,10 +6,10 @@
 
 .wrapper {
     padding: 5rem 0 10rem;
-    .container {    
+    .container {
         @extend %container;
     }
-    @media(max-width: $break-s) { 
+    @media(max-width: $break-s) {
         padding: 2rem 0 10rem;
     }
 }
