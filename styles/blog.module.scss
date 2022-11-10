@@ -2,7 +2,7 @@
 
 .wrapper {
     padding: 7rem 0 10rem;
-    .container {    
+    .container {
         @extend %container;
         .blogCard {
             display: grid;
@@ -11,14 +11,14 @@
             color: inherit;
             margin-top: 5rem;
             box-shadow: 0 4px 16px 0 rgba(0,0,0,0.2);
-            @media(max-width: $break-s) { 
+            @media(max-width: $break-s) {
                 grid-template-columns: 1fr;
             }
         }
-        
+
         .textContainer {
             padding: 0 2rem 0.8rem;
-            @media(max-width: $break-s){ 
+            @media(max-width: $break-s){
                 padding: 2rem 2rem;
             }
             a {
@@ -38,7 +38,7 @@
             img{
                 min-height: 300px;
             }
-            @media(max-width: $break-s) { 
+            @media(max-width: $break-s) {
                 order: -1;
             }
         }

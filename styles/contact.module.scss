@@ -2,7 +2,7 @@
 
 .wrapper {
     padding: 7rem 0 10rem;
-    .container {    
+    .container {
         @extend %container;
         input[type=text], input[type=email], textarea {
             width: 100%;
