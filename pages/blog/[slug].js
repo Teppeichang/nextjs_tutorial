@@ -6,20 +6,20 @@ import * as style from "../../styles/singleBlog.module.scss";
 import { getAllBlogs, getSingleBlog } from "../../utils/mdQueries";
 import PrevNext from "../../components/prevNext";
 
-const SingleBlog = (props) => {
+const SingleBlog = ({title, excerpt, frontmatter, markdownBody, prev, next}) => {
   return (
     <Layout>
-      <Seo title={props.title} description={props.excerpt} />
+      <Seo title={title} description={excerpt} />
       <div className={style.hero}>
-        <Image src={props.frontmatter.image} alt="blog-image" height="500" width="1000" />
+        <Image src={frontmatter.image} alt="blog-image" height="500" width="1000" />
       </div>
       <div className={style.wrapper}>
         <div className={style.container}>
-          <h1>{props.frontmatter.title}</h1>
-          <p>{props.frontmatter.date}</p>
-          <ReactMarkdown>{props.markdownBody}</ReactMarkdown>
+          <h1>{frontmatter.title}</h1>
+          <p>{frontmatter.date}</p>
+          <ReactMarkdown>{markdownBody}</ReactMarkdown>
         </div>
-        <PrevNext prev={props.prev} next={props.next} />
+        <PrevNext prev={prev} next={next} />
       </div>
     </Layout>
   );
