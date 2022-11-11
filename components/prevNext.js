@@ -1,5 +1,3 @@
-// prevNext.js(#5-j19)
-
 import Link from "next/link";
 import * as style from "../styles/singleBlog.module.scss";
 
