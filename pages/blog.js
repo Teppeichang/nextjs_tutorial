@@ -21,7 +21,7 @@ const Blog = (props) => {
                   <p>{blog.frontmatter.excerpt}</p>
                   <p>{blog.frontmatter.date}</p>
                   <Link href={`/blog/${blog.slug}`}>
-                    Read More
+                    <a>Read More</a>
                   </Link>
                 </div>
                 <div className={style.cardImg}>
